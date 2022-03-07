@@ -1,19 +1,20 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
-import Todays from "./components/pages/Todays";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Todays from "./pages/Todays";
+import MainLayout from "./components/layout/MainLayout";
+import AddFragrance from "./pages/AddFragrance";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to React Router!</h1>
+    <MainLayout>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="todays" element={<Todays />} />
+        <Route path="addfragrance" element={<AddFragrance />} />
       </Routes>
-    </div>
+    </MainLayout>
   );
 }
 

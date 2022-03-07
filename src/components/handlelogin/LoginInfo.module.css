@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&family=Montserrat:wght@400;500;700;900&display=swap");
+
+/* font-family: "Lato", sans-serif;
+font-family: "Merriweather", serif;
+font-family: "Montserrat", sans-serif; */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0rem;
+}
+
+.img_background {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 4rem 0rem;
+  background-image: url("../../images/login_background.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: auto 100%;
+  margin-right: 2rem;
+}
+
+.layout h1 {
+  font-family: "Montserrat", sans-serif;
+  max-width: 75%;
+  width: min-content;
+  margin-top: -5rem;
+  font-size: 1.5rem;
+}
+
+.login_img {
+  max-width: 80%;
+}
+
+.app__text {
+  font-family: "Montserrat", sans-serif;
+  color: #979797;
+  text-align: center;
+  max-width: 70%;
+  margin: 2rem 0rem;
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  color: #222;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+button:hover {
+  color: #64686a;
+}
