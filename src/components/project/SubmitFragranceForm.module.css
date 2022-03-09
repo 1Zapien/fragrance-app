@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&family=Montserrat:wght@400;500;700;900&display=swap");
+
+.form__card {
+  text-align: center;
+}
+
+.form_content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__section {
+  width: 80%;
+  margin: 0.5rem 0rem;
+}
+
+.form__section label {
+  font-size: 14px;
+  display: block;
+  margin: 0.5rem 0rem;
+  width: 100%;
+  /* color: #1a374d; */
+  color: black;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  margin: 0.5rem 0rem;
+}
+
+.form__section input {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form__submit button {
+  font-family: "Montserrat", sans-serif;
+  margin: 1rem 0rem;
+}
