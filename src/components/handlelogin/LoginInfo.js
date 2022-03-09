@@ -3,7 +3,7 @@ import classes from "./LoginInfo.module.css";
 import "../../App.css";
 // import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import { FacebookAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
-// import firebase from "../../firebase";
+import "../../firebase";
 import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
