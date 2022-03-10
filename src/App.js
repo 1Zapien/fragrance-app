@@ -4,15 +4,22 @@ import Login from "./pages/Login";
 import Todays from "./pages/Todays";
 import MainLayout from "./components/layout/MainLayout";
 import AddFragrance from "./pages/AddFragrance";
+import { useContext } from "react";
+import AuthContext from "./store/auth-context";
 
 function App() {
+  const authCtx = useContext(AuthContext);
+
+  const isLoggedIn = authCtx.isLoggedIn;
+
   return (
     <MainLayout>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="todays" element={<Todays />} />
-        <Route path="addfragrance" element={<AddFragrance />} />
+        {isLoggedIn && <Route path="/home" element={<Home />} />}
+        {isLoggedIn && <Route path="todays" element={<Todays />} />}
+        {isLoggedIn && <Route path="addfragrance" element={<AddFragrance />} />}
+        <Route path="*" element={<Login />} />
       </Routes>
     </MainLayout>
   );

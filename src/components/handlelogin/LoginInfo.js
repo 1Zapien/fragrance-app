@@ -3,31 +3,31 @@ import classes from "./LoginInfo.module.css";
 import "../../App.css";
 // import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import { FacebookAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
-import "../../firebase";
-import { Navigate } from "react-router-dom";
+import firebase from "../../firebase";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 
 function LoginInfo() {
+  const navigate = useNavigate();
   const provider = new FacebookAuthProvider();
 
   const authCtx = useContext(AuthContext);
 
-  const auth = getAuth();
-  console.log("this is auth " + auth);
+  const auth = getAuth(firebase);
   console.log(authCtx.isLoggedIn);
 
   // const user = auth.currentUser;
 
   function loginHandler(event) {
     if (authCtx.isLoggedIn) {
-      console("login should be true");
+      console.log("login should be true");
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       // ...
       // console.log(user);
 
-      <Navigate to="/home" replace={true} />;
+      return navigate("/home", { replace: true });
     } else {
       signInWithPopup(auth, provider)
         .then(result => {
@@ -35,14 +35,13 @@ function LoginInfo() {
           const credential = FacebookAuthProvider.credentialFromResult(result);
           const token = credential.accessToken;
 
-          console.log(result);
+          // console.log(result);
 
-          console("trying to login");
+          // console.log("this is the token " + token);
 
-          // const user = result.user;
-          authCtx.login(token);
-          console.log(authCtx.isLoggedIn);
-          <Navigate to="/home" replace={true} />;
+          const expirationTime = new Date(new Date().getTime() + 3600000);
+          authCtx.login(token, expirationTime.toISOString());
+          return navigate("/home", { replace: true });
         })
         .catch(error => {
           // Handle Errors here.
@@ -60,7 +59,8 @@ function LoginInfo() {
           // ...
 
           console.log("credentials error " + credential);
-          event.preventDefault();
+
+          console.log("am i logged in " + authCtx.isLoggedIn);
         });
     }
   }

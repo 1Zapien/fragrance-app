@@ -1,24 +1,28 @@
-import SumbitFragrance from "../components/project/SubmitFragranceForm";
+import SubmitFragranceForm from "../components/project/SubmitFragranceForm";
+import { useNavigate } from "react-router-dom";
 
 function AddFragrance() {
-  function SubmitFragranceHandler(projectData) {
+  const navigate = useNavigate();
+  function SubmitFragranceHandler(fragranceData) {
     fetch(
       "https://fragrance-app-b56fd-default-rtdb.firebaseio.com/fragrances.json",
       {
         method: "post",
-        body: JSON.stringify(projectData),
+        body: JSON.stringify(fragranceData),
         headers: {
           "Content-Type": "application/json"
         }
       }
-    );
+    ).then(() => {
+      navigate("/home");
+    });
   }
 
   return (
     <main>
-      <SumbitFragrance
+      <SubmitFragranceForm
         onSubmitFragrance={SubmitFragranceHandler}
-      ></SumbitFragrance>
+      ></SubmitFragranceForm>
     </main>
   );
 }
