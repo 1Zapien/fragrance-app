@@ -29,39 +29,39 @@ function LoginInfo() {
 
       return navigate("/home", { replace: true });
     } else {
-      signInWithPopup(auth, provider)
-        .then(result => {
-          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-          const credential = FacebookAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
+      signInWithPopup(auth, provider).then(result => {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
 
-          // console.log(result);
+        // console.log(result);
 
-          // console.log("this is the token " + token);
+        // console.log("this is the token " + token);
 
-          const expirationTime = new Date(new Date().getTime() + 3600000);
-          authCtx.login(token, expirationTime.toISOString());
-          return navigate("/home", { replace: true });
-        })
-        .catch(error => {
-          // Handle Errors here.
-          const errorCode = error.code;
-          console.log("this is the error code" + errorCode);
+        const expirationTime = new Date(new Date().getTime() + 3600000);
+        authCtx.login(token, expirationTime.toISOString());
+        return navigate("/home", { replace: true });
+      });
+      // .catch(error => {
+      //   // Handle Errors here.
+      //   const errorCode = error.code;
+      //   console.log("this is the error code " + errorCode);
 
-          const errorMessage = error.message;
-          console.log("this is the error message " + errorMessage);
-          // The email of the user's account used.
-          const email = error.email;
-          console.log("emailed used " + email);
+      //   const errorMessage = error.message;
+      //   console.log("this is the error message " + errorMessage);
 
-          // AuthCredential type that was used.
-          const credential = FacebookAuthProvider.credentialFromError(error);
-          // ...
+      //   // The email of the user's account used.
+      //   const email = error.email;
+      //   console.log("emailed used " + email);
 
-          console.log("credentials error " + credential);
+      //   // AuthCredential type that was used.
+      //   const credential = FacebookAuthProvider.credentialFromError(error);
+      //   // ...
 
-          console.log("am i logged in " + authCtx.isLoggedIn);
-        });
+      //   console.log("credentials error " + credential);
+
+      //   console.log("am i logged in " + authCtx.isLoggedIn);
+      // });
     }
   }
 
