@@ -17,15 +17,9 @@ function LoginInfo() {
   const auth = getAuth(firebase);
   console.log(authCtx.isLoggedIn);
 
-  // const user = auth.currentUser;
-
-  function loginHandler(event) {
+  function loginHandler() {
     if (authCtx.isLoggedIn) {
       console.log("login should be true");
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      // ...
-      // console.log(user);
 
       return navigate("/home", { replace: true });
     } else {
@@ -42,26 +36,6 @@ function LoginInfo() {
         authCtx.login(token, expirationTime.toISOString());
         return navigate("/home", { replace: true });
       });
-      // .catch(error => {
-      //   // Handle Errors here.
-      //   const errorCode = error.code;
-      //   console.log("this is the error code " + errorCode);
-
-      //   const errorMessage = error.message;
-      //   console.log("this is the error message " + errorMessage);
-
-      //   // The email of the user's account used.
-      //   const email = error.email;
-      //   console.log("emailed used " + email);
-
-      //   // AuthCredential type that was used.
-      //   const credential = FacebookAuthProvider.credentialFromError(error);
-      //   // ...
-
-      //   console.log("credentials error " + credential);
-
-      //   console.log("am i logged in " + authCtx.isLoggedIn);
-      // });
     }
   }
 
