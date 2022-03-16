@@ -50,6 +50,10 @@ function NavBar() {
                 {/* <Link to="/addfragrance">Add Fragrance </Link> */}
                 Add Fragrance
               </Nav.Link>
+              <Nav.Link href="/myfragrances" className={classes.nav_link}>
+                {/* <Link to="/addfragrance">Add Fragrance </Link> */}
+                My Fragraces
+              </Nav.Link>
               {isLoggedIn && (
                 <Nav.Link
                   href="/"

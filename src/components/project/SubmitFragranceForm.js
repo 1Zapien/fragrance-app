@@ -18,11 +18,14 @@ function SubmitFragranceForm(props) {
     // console.log(fragranceImg);
 
     // image: fragranceImg
+    var today = new Date();
+    var str = today.toGMTString();
 
     const fragranceData = {
       name: fragranceName,
       brand: brandName,
-      timesUsed: 0
+      timesUsed: 0,
+      lastUsed: str
     };
 
     props.onSubmitFragrance(fragranceData);
