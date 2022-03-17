@@ -1,0 +1,29 @@
+.frag_card {
+  margin: 2rem 0rem;
+}
+
+.frag_title {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0rem;
+}
+
+.frag_title h3 {
+  padding-right: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.frag_cardTimes {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.frag_title p {
+  margin: 0rem;
+  font-size: 1rem;
+  color: #979797;
+}
+
+/* .frag_cardDate {
+  font-weight: 500;
+} */

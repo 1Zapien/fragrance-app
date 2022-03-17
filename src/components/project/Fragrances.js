@@ -10,6 +10,7 @@ function Fragrances() {
 
   //   function that takes in a array of fragrances
   //   and finds the most and least used;
+
   const topLeastFrag = useCallback(allFrags => {
     let topFrag;
     let leastFrag;
@@ -44,6 +45,7 @@ function Fragrances() {
           lastFrag = element;
         }
       });
+
       return [lastFrag, secondLastFrag];
     }
   }, []);
@@ -83,7 +85,10 @@ function Fragrances() {
           </div>
         </>
       ) : (
-        <RecentFrags frags={loadedFragrance} />
+        <div className={classes.frag_card}>
+          <h2>All Fragrances</h2>
+          <RecentFrags frags={loadedFragrance} />
+        </div>
       )}
     </div>
   );
