@@ -28,12 +28,12 @@ function LoginInfo() {
         const credential = FacebookAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
 
-        // console.log(result);
-
         // console.log("this is the token " + token);
+        const user = result.user;
+        const userID = user.uid;
 
         const expirationTime = new Date(new Date().getTime() + 3600000);
-        authCtx.login(token, expirationTime.toISOString());
+        authCtx.login(token, expirationTime.toISOString(), userID);
         return navigate("/home", { replace: true });
       });
     }

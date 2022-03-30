@@ -7,6 +7,7 @@ function Fragrances() {
   const [loadedFragrance, setLoadedFragrances] = useState([]);
   const [topLeast, setTopLeast] = useState([]);
   const [lastUsed, setLastUsed] = useState([]);
+  let data = localStorage.getItem("userID");
 
   //   function that takes in a array of fragrances
   //   and finds the most and least used;
@@ -20,13 +21,17 @@ function Fragrances() {
           topFrag = element;
           leastFrag = element;
         }
-        if (leastFrag.timesUsed > element.timesUsed) {
+        if (leastFrag.timesUsed >= element.timesUsed) {
           leastFrag = element;
         }
         if (topFrag.timesUsed < element.timesUsed && element.timesUsed) {
           topFrag = element;
         }
       });
+      if (topFrag === leastFrag) {
+        return [topFrag];
+      }
+
       return [topFrag, leastFrag];
     }
   }, []);
@@ -40,7 +45,7 @@ function Fragrances() {
           lastFrag = element;
           secondLastFrag = element;
         }
-        if (lastFrag.lastUsed < element.lastUsed) {
+        if (lastFrag.lastUsed <= element.lastUsed) {
           secondLastFrag = lastFrag;
           lastFrag = element;
         }
@@ -52,7 +57,7 @@ function Fragrances() {
 
   useEffect(() => {
     fetch(
-      "https://fragrance-app-b56fd-default-rtdb.firebaseio.com/fragrances.json"
+      `https://fragrance-app-b56fd-default-rtdb.firebaseio.com/user/${data}/fragrances.json`
     )
       .then(response => response.json())
       .then(data => {
@@ -67,8 +72,20 @@ function Fragrances() {
         setLoadedFragrances(fragrances);
         setTopLeast(topLeastFrag(fragrances));
         setLastUsed(compareDate(fragrances));
+        console.log(fragrances);
       });
-  }, [topLeastFrag, compareDate]);
+  }, [topLeastFrag, compareDate, data]);
+
+  if (loadedFragrance.length === 0) {
+    return <p className={classes.empty__note}>Please Add Fragrances</p>;
+  } else if (loadedFragrance.length === 1) {
+    return (
+      <div className={classes.frag_card}>
+        <h2>Add more Fragrances for more data </h2>
+        <RecentFrags frags={loadedFragrance} />
+      </div>
+    );
+  }
 
   return (
     <div className={classes.frag_layout}>

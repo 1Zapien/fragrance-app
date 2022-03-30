@@ -25,11 +25,13 @@ export const AuthContextProvider = props => {
   const logoutHandler = () => {
     setToken(null);
     localStorage.removeItem("token");
+    localStorage.removeItem("userID");
   };
 
-  const loginHandler = (token, expirationTime) => {
+  const loginHandler = (token, expirationTime, userID) => {
     setToken(token);
     localStorage.setItem("token", token);
+    localStorage.setItem("userID", userID);
 
     const remainingTime = calculateRemainingTime(expirationTime);
 
