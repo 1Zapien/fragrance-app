@@ -2,12 +2,15 @@
 import { useEffect, useState, useCallback } from "react";
 import RecentFrags from "./FragList";
 import classes from "./Fragrances.module.css";
+import { Link } from "react-router-dom";
 
 function Fragrances() {
   const [loadedFragrance, setLoadedFragrances] = useState([]);
   const [topLeast, setTopLeast] = useState([]);
   const [lastUsed, setLastUsed] = useState([]);
+  const [fragNumber, setFragNumber] = useState(0);
   let data = localStorage.getItem("userID");
+  let userName = localStorage.getItem("userName");
 
   //   function that takes in a array of fragrances
   //   and finds the most and least used;
@@ -69,10 +72,10 @@ function Fragrances() {
           };
           fragrances.push(fragrance);
         }
+        setFragNumber(fragrances.length);
         setLoadedFragrances(fragrances);
         setTopLeast(topLeastFrag(fragrances));
         setLastUsed(compareDate(fragrances));
-        console.log(fragrances);
       });
   }, [topLeastFrag, compareDate, data]);
 
@@ -88,25 +91,38 @@ function Fragrances() {
   }
 
   return (
-    <div className={classes.frag_layout}>
-      {window.location.pathname === "/home" ? (
-        <>
-          <div className={classes.frag_card}>
-            <h2>Recent Fragrances</h2>
-            <RecentFrags frags={lastUsed} />
-          </div>
+    <div>
+      <div className={classes.banner}>
+        <h1 className={classes.app__text}>
+          Hello {userName}, you currently have {fragNumber} Fragrances. You
+          currently have ___/none.
+        </h1>
+        <nav>
+          <Link to="/todays" className={classes.banner_action}>
+            Scent of the day?
+          </Link>
+        </nav>
+      </div>
+      <div className={classes.frag_layout}>
+        {window.location.pathname === "/home" ? (
+          <>
+            <div className={classes.frag_card}>
+              <h2>Recent Fragrances</h2>
+              <RecentFrags frags={lastUsed} />
+            </div>
 
+            <div className={classes.frag_card}>
+              <h2>Most & Least Used</h2>
+              <RecentFrags frags={topLeast} />
+            </div>
+          </>
+        ) : (
           <div className={classes.frag_card}>
-            <h2>Most & Least Used</h2>
-            <RecentFrags frags={topLeast} />
+            <h2>All Fragrances</h2>
+            <RecentFrags frags={loadedFragrance} />
           </div>
-        </>
-      ) : (
-        <div className={classes.frag_card}>
-          <h2>All Fragrances</h2>
-          <RecentFrags frags={loadedFragrance} />
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

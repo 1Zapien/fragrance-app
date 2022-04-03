@@ -31,9 +31,10 @@ function LoginInfo() {
         // console.log("this is the token " + token);
         const user = result.user;
         const userID = user.uid;
+        const userName = user.displayName;
 
         const expirationTime = new Date(new Date().getTime() + 3600000);
-        authCtx.login(token, expirationTime.toISOString(), userID);
+        authCtx.login(token, expirationTime.toISOString(), userID, userName);
         return navigate("/home", { replace: true });
       });
     }

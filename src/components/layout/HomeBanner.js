@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import classes from "./HomeBanner.module.css";
 import home_hero from "../../images/le_labo.jpg";
 function HomeBanner() {
@@ -19,20 +18,6 @@ function HomeBanner() {
           alt="login hero"
         ></img>
       </div>
-
-      <h2 className={classes.app__text}>
-        Hello Juan Zapien, you currently have 15 Fragrances. You currently have
-        ___/none.
-      </h2>
-      {/* <nav>
-        <Link to="home">Log in with Facebook -></Link>
-      </nav> */}
-      {/* <FacebookComponent /> */}
-      <nav>
-        <Link to="/addfragrance" className={classes.banner_action}>
-          Add Fragrance
-        </Link>
-      </nav>
     </div>
   );
 }

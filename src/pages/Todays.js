@@ -4,7 +4,7 @@ function Todays() {
   return (
     <>
       <main>
-        <h2>Select your Fragrance of the day!</h2>
+        <h2>Select your Fragrance of the day</h2>
       </main>
       <nav>
         <Link to="/home">Home</Link>
