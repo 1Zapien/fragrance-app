@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&family=Montserrat:wght@400;500;700;900&display=swap");
+
+.main {
+  text-align: center;
+}
+
+.main h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  padding-top: 2rem;
+  color: #343a40;
+  font-weight: 400;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  margin: 1rem;
+  padding: 2rem 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  border: solid grey 2px;
+}
+
+.card:hover {
+  border: solid black 2px;
+  cursor: pointer;
+}
+
+.active_card {
+  border-radius: 10px;
+  border: solid #5f7470 2px;
+  animation-name: glow;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  outline: 4px solid rgba(184, 189, 181, 0.8);
+  outline-offset: 0.5px;
+}
+
+.frag_card {
+  margin: 2rem 2rem;
+  text-align: left;
+  display: flex;
+}
+
+.frag_card img {
+  max-width: 50%;
+  padding-right: 1rem;
+}
+
+.frag_data {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0rem;
+  flex-direction: column;
+  align-items: baseline;
+  width: 50%;
+  margin: auto;
+}
+
+.frag_data h3 {
+  padding-right: 0.5rem;
+  font-size: 2rem;
+  color: #5f7470;
+}
+
+.frag_cardTimes {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.frag_data p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #889696;
+}
+
+.frag_cardInfo p {
+  margin-bottom: 0.25rem;
+}
+
+.frag_cardInfo p h6 {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding-right: 0.75rem;
+}
+
+@keyframes glow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.011);
+    box-shadow: none;
+  }
+}
+
+.project_submit {
+  align-self: center;
+  margin: 2rem;
+  font-size: 1.3rem;
+}

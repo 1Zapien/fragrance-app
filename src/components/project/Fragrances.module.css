@@ -8,12 +8,21 @@
   align-items: center;
   flex-direction: column;
   padding-bottom: 4rem;
-  border-bottom: 2px solid #979797;
+}
+
+.intro {
+  font-family: "Montserrat", sans-serif;
+  color: #343a40;
+  font-size: 1.3rem;
+  max-width: 60%;
+  text-align: center;
+  opacity: 0.6;
+  margin: 1rem 0rem 0rem 0rem;
 }
 
 .app__text {
   font-family: "Montserrat", sans-serif;
-  color: #979797;
+  color: #343a40;
   text-align: center;
   max-width: 60%;
   margin: 2rem 0rem;
@@ -25,18 +34,24 @@
   border: none;
   background: none;
   font-family: "Montserrat", sans-serif;
-  color: #222;
-  font-size: 1.5rem;
-  text-decoration: underline;
+  color: #e0e2db;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: #5f7470;
+  padding: 1rem 3rem;
+  margin: 2rem 0rem;
 }
 
 .banner_action:hover {
-  color: #64686a;
+  background-color: #889696;
+  color: #e0e2db;
 }
 
-/* .frag_layout {
-  padding: 2rem 2rem;
-} */
+.frag_layout h2 {
+  text-align: center;
+  color: #343a40;
+  opacity: 0.8;
+}
 
 .empty__note {
   font-family: "Montserrat", sans-serif;
@@ -47,17 +62,37 @@
 
 .frag_layout p {
   font-family: "Montserrat", sans-serif;
-  color: #979797;
+  color: #343a40;
+  opacity: 0.6;
 }
 
 .frag_card {
   padding: 2rem 2rem;
-  border-bottom: 2px solid #979797;
+  border-top: 1px solid #e0e2db;
 }
 
-.frag_card h2 {
-  text-align: center;
-  padding: 1rem 0rem;
-  color: black;
-  font-size: 1.2rem;
+strong {
+  font-weight: 300;
+  color: #5f7470;
+}
+
+@media only screen and (min-width: 900px) {
+  .banner {
+    padding-bottom: 0rem;
+    border-bottom: none;
+    align-items: flex-start;
+    padding-left: 3rem;
+  }
+
+  .app__text {
+    max-width: 100%;
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  .intro {
+    max-width: 90%;
+    line-height: 2rem;
+    text-align: left;
+  }
 }

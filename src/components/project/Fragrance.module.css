@@ -11,17 +11,25 @@
 .frag_title h3 {
   padding-right: 0.5rem;
   font-size: 1.75rem;
+  color: #5f7470;
 }
 
 .frag_cardTimes {
   margin-bottom: 0.5rem;
   font-size: 0.8rem;
+  color: #343a40;
+  opacity: 0.6;
 }
 
 .frag_title p {
   margin: 0rem;
   font-size: 1rem;
-  color: #979797;
+  color: #343a40;
+  opacity: 0.6;
+}
+
+.frag_cardInfo img {
+  padding-right: 1rem;
 }
 
 /* .frag_cardDate {

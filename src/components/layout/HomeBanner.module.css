@@ -5,10 +5,11 @@ font-family: "Merriweather", serif;
 font-family: "Montserrat", sans-serif; */
 
 .layout {
+  border-top: 1px solid #e0e2db;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0rem 0rem 0rem;
+  padding: 1rem 0rem 0rem 0rem;
 }
 
 .img_background {
@@ -22,12 +23,37 @@ font-family: "Montserrat", sans-serif; */
 
 .layout h1 {
   font-family: "Montserrat", sans-serif;
-  max-width: 75%;
-  width: min-content;
-  margin-top: -5rem;
   font-size: 1.5rem;
+  color: #343a40;
+  margin: 1rem;
 }
 
 .login_img {
   max-width: 70%;
+}
+
+@media only screen and (min-width: 900px) {
+  .layout {
+    border-top: 1px solid #e0e2db;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 2rem 0rem 3rem 0rem;
+    text-align: left;
+  }
+
+  .layout h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0rem;
+  }
+
+  .img_background {
+    width: 100%;
+    background-position: 55% 50%;
+    background-size: auto 150%;
+  }
+
+  .login_img {
+    max-width: 75%;
+    margin-left: -17rem;
+  }
 }

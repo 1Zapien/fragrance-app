@@ -19,8 +19,12 @@ function NavBar() {
 
   return (
     <Navbar collapseOnSelect bg="white" expand={false}>
-      <Container fluid>
-        <Navbar.Brand href="#" className={classes.nav_logo}>
+      <Container fluid className={classes.nav_bar}>
+        <Navbar.Brand
+          href="home"
+          className={classes.nav_logo}
+          bsPrefix="customNav"
+        >
           ART OF FRAGRANCE
         </Navbar.Brand>
         <Navbar.Toggle

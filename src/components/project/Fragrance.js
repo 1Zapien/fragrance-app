@@ -1,4 +1,6 @@
 import classes from "./Fragrance.module.css";
+import icon from "../../images/calendar.png";
+import counter from "../../images/counter.png";
 
 function Fragrance(props) {
   // Function to remove the time from last used
@@ -17,8 +19,17 @@ function Fragrance(props) {
           <p>-{props.brand}</p>
         </div>
 
-        <p className={classes.frag_cardTimes}>Times Used: {props.timesUsed}</p>
-        <p className={classes.frag_cardDate}>{removeTime(props.lastUsed)}</p>
+        <div className={classes.frag_cardInfo}>
+          <p>
+            <img src={counter} alt="counter icon"></img>
+            {props.timesUsed} times used
+          </p>
+
+          <p>
+            <img src={icon} alt="hero"></img>
+            {removeTime(props.lastUsed)}
+          </p>
+        </div>
       </div>
     </div>
   );

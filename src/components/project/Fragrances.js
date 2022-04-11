@@ -3,12 +3,14 @@ import { useEffect, useState, useCallback } from "react";
 import RecentFrags from "./FragList";
 import classes from "./Fragrances.module.css";
 import { Link } from "react-router-dom";
+import HomeBanner from "../layout/HomeBanner";
 
 function Fragrances() {
   const [loadedFragrance, setLoadedFragrances] = useState([]);
   const [topLeast, setTopLeast] = useState([]);
   const [lastUsed, setLastUsed] = useState([]);
   const [fragNumber, setFragNumber] = useState(0);
+  const [fragsOTD, setFragsOTD] = useState([]);
   let data = localStorage.getItem("userID");
   let userName = localStorage.getItem("userName");
 
@@ -39,20 +41,36 @@ function Fragrances() {
     }
   }, []);
 
+  const fragranceOTD = useCallback(allFrags => {
+    const fragsOfToday = [];
+    let todayDate = new Date();
+
+    if (allFrags) {
+      allFrags.forEach(element => {
+        let otherDate = new Date(element.lastUsed);
+
+        if (
+          otherDate.getDate() === todayDate.getDate() &&
+          otherDate.getMonth() === todayDate.getMonth() &&
+          otherDate.getYear() === todayDate.getYear()
+        ) {
+          fragsOfToday.push(element.name);
+        }
+      });
+    }
+    return fragsOfToday;
+  }, []);
+
   const compareDate = useCallback(allFrags => {
     let lastFrag;
     let secondLastFrag;
     if (allFrags) {
-      allFrags.forEach(element => {
-        if (!lastFrag && !secondLastFrag) {
-          lastFrag = element;
-          secondLastFrag = element;
-        }
-        if (lastFrag.lastUsed <= element.lastUsed) {
-          secondLastFrag = lastFrag;
-          lastFrag = element;
-        }
+      allFrags = allFrags.sort((a, b) => {
+        return new Date(b.lastUsed) - new Date(a.lastUsed);
       });
+      console.log(allFrags);
+      lastFrag = allFrags[0];
+      secondLastFrag = allFrags[1];
 
       return [lastFrag, secondLastFrag];
     }
@@ -76,8 +94,9 @@ function Fragrances() {
         setLoadedFragrances(fragrances);
         setTopLeast(topLeastFrag(fragrances));
         setLastUsed(compareDate(fragrances));
+        setFragsOTD(fragranceOTD(fragrances));
       });
-  }, [topLeastFrag, compareDate, data]);
+  }, [topLeastFrag, compareDate, data, fragranceOTD]);
 
   if (loadedFragrance.length === 0) {
     return <p className={classes.empty__note}>Please Add Fragrances</p>;
@@ -90,19 +109,44 @@ function Fragrances() {
     );
   }
 
+  const todays = (
+    <>
+      . You fragrance of the day is <strong>{fragsOTD.join(", ")}</strong>
+    </>
+  );
+
+  // ` You fragrance of the day is ${fragsOTD.join(", ")} `
+
   return (
     <div>
-      <div className={classes.banner}>
-        <h1 className={classes.app__text}>
-          Hello {userName}, you currently have {fragNumber} Fragrances. You
-          currently have ___/none.
-        </h1>
-        <nav>
-          <Link to="/todays" className={classes.banner_action}>
-            Scent of the day?
-          </Link>
-        </nav>
-      </div>
+      {window.location.pathname === "/home" ? (
+        <HomeBanner>
+          <div className={classes.banner}>
+            <p className={classes.intro}>Hello there,</p>
+            <h1 className={classes.app__text}>
+              {userName} welcome to Art Of Fragrances
+            </h1>
+            <p className={classes.intro}>
+              you currently have {fragNumber} Fragrances in your collection
+              {fragsOTD.length <= 0
+                ? `. You
+              aren't wearing a scent today please add your scent the day.`
+                : todays}
+            </p>
+            <nav>
+              <Link
+                to="/todays"
+                className={classes.banner_action}
+                frags={loadedFragrance}
+              >
+                Add SOTD
+              </Link>
+            </nav>
+          </div>
+        </HomeBanner>
+      ) : (
+        <></>
+      )}
       <div className={classes.frag_layout}>
         {window.location.pathname === "/home" ? (
           <>

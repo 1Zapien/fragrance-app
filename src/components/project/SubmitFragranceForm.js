@@ -2,11 +2,9 @@ import classes from "./SubmitFragranceForm.module.css";
 import { useRef } from "react";
 
 function SubmitFragranceForm(props) {
-  // const [selectedFile, setSelectedFile] = useState("");
-
   const inputNameRef = useRef();
   const inputBrandRef = useRef();
-  // const inputImgRef = useRef();
+  const inputImgRef = useRef();
 
   function submitHandler(event) {
     console.log("you submitted");
@@ -14,8 +12,7 @@ function SubmitFragranceForm(props) {
 
     const fragranceName = inputNameRef.current.value;
     const brandName = inputBrandRef.current.value;
-    // const fragranceImg = inputImgRef.current.value;
-    // console.log(fragranceImg);
+    const fragranceImg = inputImgRef.current.value;
 
     // image: fragranceImg
     var today = new Date();
@@ -25,7 +22,8 @@ function SubmitFragranceForm(props) {
       name: fragranceName,
       brand: brandName,
       timesUsed: 0,
-      lastUsed: str
+      lastUsed: str,
+      imgUrl: fragranceImg
     };
 
     props.onSubmitFragrance(fragranceData);
@@ -58,15 +56,15 @@ function SubmitFragranceForm(props) {
             placeholder="Enter fragrance brand"
           />
         </div>
-        {/* <div className={classes.form__section}>
-            <label htmlFor="fragrance-img">Fragrance Image</label>
-            <input
-              type="file"
-              id="fragrance-img"
-              ref={inputImgRef}
-              placeholder="Enter fragrance image"
-            />
-          </div> */}
+        <div className={classes.form__section}>
+          <label htmlFor="fragrance-img">Fragrance Image</label>
+          <input
+            type="text"
+            id="fragrance-img"
+            ref={inputImgRef}
+            placeholder="Enter WebImage URL"
+          />
+        </div>
       </form>
       <div className={classes.form__submit}>
         <button
