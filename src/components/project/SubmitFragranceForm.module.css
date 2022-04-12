@@ -2,6 +2,16 @@
 
 .form__card {
   text-align: center;
+  padding: 2rem 2rem;
+  border-top: 1px solid #e0e2db;
+}
+
+.form__card h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  padding-top: 2rem;
+  color: #343a40;
+  font-weight: 400;
 }
 
 .form__content {
@@ -10,20 +20,22 @@
   flex: 1;
   align-items: center;
   justify-content: center;
+  row-gap: 0rem;
 }
 
 .form__section {
-  width: 80%;
+  width: 75%;
   margin: 0.5rem 0rem;
 }
 
 .form__section label {
-  font-size: 14px;
+  font-size: 1.2rem;
   display: block;
   margin: 0.5rem 0rem;
   width: 100%;
-  /* color: #1a374d; */
-  color: black;
+  color: #343a40;
+  font-size: 1rem;
+  opacity: 0.7;
   text-align: left;
   font-family: "Montserrat", sans-serif;
   padding: 0.5rem 0rem;
@@ -37,4 +49,36 @@
 .form__submit button {
   font-family: "Montserrat", sans-serif;
   margin: 1rem 0rem;
+}
+
+.form__section {
+  margin: 0.25rem 0rem;
+}
+
+.form__section label {
+  display: block;
+  margin: 0.5rem 0rem;
+  width: 100%;
+  /* color: #1a374d; */
+  color: black;
+}
+
+.form__section input {
+  height: 2.345rem;
+  border: 1.5px solid #cccccc;
+  border-radius: 5px;
+  width: 100%;
+}
+.form__section input:hover {
+  border: 1.5px solid #767676;
+}
+
+.form__section input[type="text"] {
+  padding-left: 0.5rem;
+  color: #9e9e9e;
+}
+
+input::placeholder {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }

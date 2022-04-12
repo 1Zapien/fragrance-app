@@ -21,12 +21,6 @@ form {
   padding: 2rem 2rem;
 }
 
-@media only screen and (max-width: 900px) {
-  form {
-    grid-template-columns: 1fr;
-  }
-}
-
 .card {
   border-radius: 10px;
   box-sizing: border-box;
@@ -111,4 +105,19 @@ form {
   align-self: center;
   margin: 2rem;
   font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 900px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .frag_card {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .frag_data {
+    width: 75%;
+  }
 }

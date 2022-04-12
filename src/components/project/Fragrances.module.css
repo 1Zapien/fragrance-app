@@ -49,8 +49,9 @@
 
 .frag_layout h2 {
   text-align: center;
+  padding-top: 2rem;
   color: #343a40;
-  opacity: 0.8;
+  font-weight: 400;
 }
 
 .empty__note {
@@ -73,7 +74,8 @@
 
 strong {
   font-weight: 300;
-  color: #5f7470;
+  color: #343a40;
+  /* color: #5f7470; */
 }
 
 @media only screen and (min-width: 900px) {

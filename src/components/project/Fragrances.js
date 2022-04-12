@@ -111,7 +111,7 @@ function Fragrances() {
 
   const todays = (
     <>
-      . You fragrance of the day is <strong>{fragsOTD.join(", ")}</strong>
+      Your fragrance of the day is <strong>{fragsOTD.join(", ")}</strong>
     </>
   );
 
@@ -124,7 +124,8 @@ function Fragrances() {
           <div className={classes.banner}>
             <p className={classes.intro}>Hello there,</p>
             <h1 className={classes.app__text}>
-              {userName} welcome to Art Of Fragrances
+              {" "}
+              {userName}. Welcome to Art Of Fragrances
             </h1>
             <p className={classes.intro}>
               you currently have {fragNumber} Fragrances in your collection

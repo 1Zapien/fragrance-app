@@ -31,6 +31,7 @@ function SubmitFragranceForm(props) {
 
   return (
     <div className={classes.form__card}>
+      <h2> Add Fragrance to Collection</h2>
       <form
         onSubmit={submitHandler}
         className={classes.form__content}
