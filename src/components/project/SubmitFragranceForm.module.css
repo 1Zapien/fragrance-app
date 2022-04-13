@@ -21,10 +21,11 @@
   align-items: center;
   justify-content: center;
   row-gap: 0rem;
+  margin: 1rem 0rem;
 }
 
 .form__section {
-  width: 75%;
+  width: 100%;
   margin: 0.5rem 0rem;
 }
 
@@ -46,9 +47,27 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.form__submit button {
+/* .form__submit button {
   font-family: "Montserrat", sans-serif;
   margin: 1rem 0rem;
+} */
+
+.project__submit {
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #e0e2db;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: #5f7470;
+  padding: 0.75rem 2rem;
+  margin: 2rem 0rem;
+}
+
+.project__submit:hover {
+  background-color: #889696;
+  color: #e0e2db;
 }
 
 .form__section {
@@ -81,4 +100,10 @@
 input::placeholder {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+@media only screen and (min-width: 900px) {
+  .form__section {
+    width: 50%;
+  }
 }

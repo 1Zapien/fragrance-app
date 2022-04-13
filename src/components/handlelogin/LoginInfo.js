@@ -49,24 +49,17 @@ function LoginInfo() {
           alt="login hero"
         ></img>
       </div>
-      <h1>ART OF FRAGRANCE</h1>
-      <p className={classes.app__text}>
-        Keep track of your fragrance collection and the last times you wore each
-        of them.
-      </p>
-      {/* <nav>
-        <Link to="home">Log in with Facebook -></Link>
-      </nav> */}
-      {/* <FacebookComponent /> */}
-      {/* <FacebookLogin
-        appId={process.env.REACT_APP_FBLOGIN}
-        autoLoad
-        callback={responseFacebook}
-        render={renderProps => (
-          <button onClick={renderProps.onClick}>Log in with Facebook -></button>
-        )}
-      /> */}
-      <button onClick={loginHandler}>Log in with Facebook -></button>
+      <div className={classes.login_data}>
+        <h1>ART OF FRAGRANCE</h1>
+        <p className={classes.app__text}>
+          Keep track of your fragrance collection and your use pattern for each
+          fragrance
+        </p>
+
+        <button onClick={loginHandler} className={classes.banner_action}>
+          Log in with Facebook
+        </button>
+      </div>
     </div>
   );
 }
