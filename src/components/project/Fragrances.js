@@ -111,7 +111,7 @@ function Fragrances() {
 
   const todays = (
     <>
-      Your fragrance of the day is <strong>{fragsOTD.join(", ")}</strong>
+      . Your fragrance of the day is <strong>{fragsOTD.join(", ")}</strong>
     </>
   );
 
@@ -128,7 +128,7 @@ function Fragrances() {
               {userName}. Welcome to Art Of Fragrances
             </h1>
             <p className={classes.intro}>
-              you currently have {fragNumber} Fragrances in your collection.{" "}
+              you currently have {fragNumber} Fragrances in your collection
               {fragsOTD.length <= 0
                 ? `. You
               aren't wearing a scent today please add your scent the day.`
