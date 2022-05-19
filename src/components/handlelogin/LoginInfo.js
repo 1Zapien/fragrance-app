@@ -1,4 +1,5 @@
-import login_img from "../../images/loginhero.jpg";
+// import login_img from "../../images/login_update.jpg";
+import login_img from "../../images/test.gif";
 import classes from "./LoginInfo.module.css";
 import "../../App.css";
 // import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";

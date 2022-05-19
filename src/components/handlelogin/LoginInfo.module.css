@@ -13,20 +13,27 @@ font-family: "Montserrat", sans-serif; */
 
 .img_background {
   text-align: center;
-  padding: 4rem 0rem;
-  background-image: url("../../images/login_background.svg");
+  padding: 0rem 0rem 4rem 0rem;
+
+  margin-top: 0rem;
+  width: 100%;
+  background-size: auto 125%;
+  padding: 0rem;
+  background-image: url(../../images/X-Mockup.svg);
+  background-position: 50.5% 22%;
   background-repeat: no-repeat;
-  background-position: 95% 50%;
-  background-size: auto 100%;
-  margin-right: 2rem;
+  background-size: auto 95%;
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #b8bdb5;
 }
 
 .login_data h1 {
   font-family: "Montserrat", sans-serif;
-  color: #343a40;
+  color: black;
   max-width: 75%;
   width: min-content;
-  margin: -5rem auto 0rem;
+  margin: -1rem auto 0rem;
   font-size: 1.75rem;
   font-weight: 400;
   text-align: center;
@@ -72,30 +79,56 @@ font-family: "Montserrat", sans-serif; */
 @media only screen and (min-width: 900px) {
   .layout {
     flex-direction: row-reverse;
-    margin: 1rem 0rem;
+    margin: 0rem auto;
+    width: 90%;
+    padding: 0rem;
+    border-radius: 5px;
+    background-color: #fefffe;
   }
 
   .login_data h1 {
-    margin: 0rem auto 0rem;
-    font-size: 2rem;
+    margin: 0rem;
+    font-size: 4rem;
+    text-align: left;
   }
 
   .login_data {
     flex-direction: column;
+    width: 90%;
   }
 
   .img_background {
-    margin-top: 1rem;
+    margin-top: 0rem;
     width: 100%;
     background-size: auto 125%;
+    padding: 0rem;
+    background-image: url(../../images/better-background.svg);
+    background-position: 50% 51%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #b8bdb5;
+    border-radius: 0rem 5px 5px 0px;
+  }
+
+  .img_background img {
+    max-width: auto;
+    max-height: 80vh;
+    border-radius: 5px;
   }
 
   .login_img {
-    width: 80%;
+    width: auto;
+  }
+
+  .login_data {
+    text-align: left;
   }
 
   .app__text {
-    margin: 3rem auto;
+    margin: 2rem 0rem;
+    text-align: left;
   }
 
   .banner_action {
