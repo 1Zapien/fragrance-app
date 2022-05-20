@@ -1,5 +1,18 @@
 .frag_card {
+  display: flex;
   margin: 2rem 0rem;
+  flex-direction: row-reverse;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.frag_img img {
+  max-width: 50%;
+  float: right;
+}
+
+.frag_info {
+  min-width: 50%;
 }
 
 .frag_title {
@@ -35,3 +48,23 @@
 /* .frag_cardDate {
   font-weight: 500;
 } */
+
+@media only screen and (max-width: 750px) {
+  .frag_card {
+    display: flex;
+    margin: 2rem 0rem;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .frag_img {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .frag_img img {
+    max-width: 60%;
+    float: none;
+  }
+}

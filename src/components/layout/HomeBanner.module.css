@@ -33,6 +33,50 @@ font-family: "Montserrat", sans-serif; */
   max-width: 70%;
 }
 
+.banner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.intro {
+  font-family: "Montserrat", sans-serif;
+  color: #343a40;
+  font-size: 1rem;
+  max-width: 60%;
+  text-align: center;
+  opacity: 0.6;
+  margin: 0rem;
+}
+
+.app__text {
+  font-family: "Montserrat", sans-serif;
+  color: #343a40;
+  text-align: center;
+  max-width: 60%;
+  margin: 2rem 0rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.banner_action {
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  color: #e0e2db;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: #5f7470;
+  padding: 0.5rem 1.5rem;
+  margin: 2rem 0rem;
+}
+
+.banner_action:hover {
+  background-color: #889696;
+  color: #e0e2db;
+}
+
 @media only screen and (min-width: 900px) {
   .layout {
     border-top: 1px solid #e0e2db;
@@ -56,5 +100,31 @@ font-family: "Montserrat", sans-serif; */
   .login_img {
     max-width: 75%;
     margin-left: -7rem;
+  }
+
+  .banner {
+    padding-bottom: 0rem;
+    border-bottom: none;
+    align-items: flex-start;
+    padding-left: 3rem;
+    padding-bottom: 4rem;
+  }
+  .banner_action {
+    padding: 0.5rem 2rem;
+  }
+
+  .app__text {
+    max-width: 100%;
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  .intro {
+    max-width: 90%;
+    line-height: 2rem;
+    text-align: left;
+    font-size: 1.3rem;
+    opacity: 0.6;
+    margin: 1rem 0rem 0rem 0rem;
   }
 }

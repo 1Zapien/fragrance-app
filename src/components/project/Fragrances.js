@@ -2,7 +2,6 @@
 import { useEffect, useState, useCallback } from "react";
 import RecentFrags from "./FragList";
 import classes from "./Fragrances.module.css";
-import { Link } from "react-router-dom";
 import HomeBanner from "../layout/HomeBanner";
 
 function Fragrances() {
@@ -12,7 +11,6 @@ function Fragrances() {
   const [fragNumber, setFragNumber] = useState(0);
   const [fragsOTD, setFragsOTD] = useState([]);
   let data = localStorage.getItem("userID");
-  let userName = localStorage.getItem("userName");
 
   //   function that takes in a array of fragrances
   //   and finds the most and least used;
@@ -68,7 +66,7 @@ function Fragrances() {
       allFrags = allFrags.sort((a, b) => {
         return new Date(b.lastUsed) - new Date(a.lastUsed);
       });
-      console.log(allFrags);
+
       lastFrag = allFrags[0];
       secondLastFrag = allFrags[1];
 
@@ -109,42 +107,14 @@ function Fragrances() {
     );
   }
 
-  const todays = (
-    <>
-      . Your fragrance of the day is <strong>{fragsOTD.join(", ")}</strong>
-    </>
-  );
-
-  // ` You fragrance of the day is ${fragsOTD.join(", ")} `
-
   return (
     <div>
       {window.location.pathname === "/home" ? (
-        <HomeBanner>
-          <div className={classes.banner}>
-            <p className={classes.intro}>Hello there,</p>
-            <h1 className={classes.app__text}>
-              {" "}
-              {userName}. Welcome to Art Of Fragrances
-            </h1>
-            <p className={classes.intro}>
-              you currently have {fragNumber} Fragrances in your collection
-              {fragsOTD.length <= 0
-                ? `. You
-              aren't wearing a scent today please add your scent the day.`
-                : todays}
-            </p>
-            <nav>
-              <Link
-                to="/todays"
-                className={classes.banner_action}
-                frags={loadedFragrance}
-              >
-                Add SOTD
-              </Link>
-            </nav>
-          </div>
-        </HomeBanner>
+        <HomeBanner
+          fragNum={fragNumber}
+          fragToday={fragsOTD}
+          frags={loadedFragrance}
+        ></HomeBanner>
       ) : (
         <></>
       )}

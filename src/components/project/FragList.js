@@ -11,6 +11,7 @@ function FragsList(props) {
           brand={frag.brand}
           timesUsed={frag.timesUsed}
           lastUsed={frag.lastUsed}
+          img={frag.imgUrl}
         />
       ))}
     </div>

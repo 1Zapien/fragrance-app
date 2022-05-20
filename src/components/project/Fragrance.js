@@ -14,21 +14,26 @@ function Fragrance(props) {
   return (
     <div>
       <div className={classes.frag_card}>
-        <div className={classes.frag_title}>
-          <h3>{props.name}</h3>
-          <p>-{props.brand}</p>
+        <div className={classes.frag_img}>
+          {props.img ? <img src={props.img} alt="frag"></img> : <></>}
         </div>
+        <div className={classes.frag_info}>
+          <div className={classes.frag_title}>
+            <h3>{props.name}</h3>
+            <p>-{props.brand}</p>
+          </div>
 
-        <div className={classes.frag_cardInfo}>
-          <p>
-            <img src={counter} alt="counter icon"></img>
-            {props.timesUsed} times used
-          </p>
+          <div className={classes.frag_cardInfo}>
+            <p>
+              <img src={counter} alt="counter icon"></img>
+              {props.timesUsed} times used
+            </p>
 
-          <p>
-            <img src={icon} alt="hero"></img>
-            {removeTime(props.lastUsed)}
-          </p>
+            <p>
+              <img src={icon} alt="hero"></img>
+              {removeTime(props.lastUsed)}
+            </p>
+          </div>
         </div>
       </div>
     </div>
