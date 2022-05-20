@@ -8,24 +8,21 @@ font-family: "Montserrat", sans-serif; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0rem;
+  margin: 0rem;
 }
 
 .img_background {
-  text-align: center;
-  padding: 0rem 0rem 4rem 0rem;
-
   margin-top: 0rem;
   width: 100%;
   background-size: auto 125%;
   padding: 0rem;
-  background-image: url(../../images/X-Mockup.svg);
-  background-position: 50.5% 22%;
+  background-image: url(../../images/better-background.svg);
+  background-position: 50% 51%;
   background-repeat: no-repeat;
-  background-size: auto 95%;
+  background-size: auto 100%;
   padding: 4rem 0;
   text-align: center;
-  background-color: #b8bdb5;
+  border-radius: 0rem 5px 5px 0px;
 }
 
 .login_data h1 {
@@ -40,7 +37,7 @@ font-family: "Montserrat", sans-serif; */
 }
 
 .login_img {
-  max-width: 80%;
+  max-width: 35%;
 }
 
 .login_data {
@@ -53,8 +50,8 @@ font-family: "Montserrat", sans-serif; */
   color: #343a40;
   text-align: center;
   max-width: 70%;
-  margin: 1rem auto;
-  font-size: 1.2rem;
+  margin: 0.5rem auto;
+  font-size: 1rem;
 }
 
 .banner_action {
@@ -67,7 +64,7 @@ font-family: "Montserrat", sans-serif; */
   border-radius: 10px;
   background-color: #5f7470;
   padding: 0.75rem 2rem;
-  margin: 2rem 0rem;
+  margin: 0.5rem 0rem;
   width: 75%;
 }
 
@@ -81,7 +78,8 @@ font-family: "Montserrat", sans-serif; */
     flex-direction: row-reverse;
     margin: 0rem auto;
     width: 90%;
-    padding: 0rem;
+    padding: 1rem 0rem;
+    min-height: 80vh;
     border-radius: 5px;
     background-color: #fefffe;
   }
@@ -98,18 +96,7 @@ font-family: "Montserrat", sans-serif; */
   }
 
   .img_background {
-    margin-top: 0rem;
-    width: 100%;
-    background-size: auto 125%;
-    padding: 0rem;
-    background-image: url(../../images/better-background.svg);
-    background-position: 50% 51%;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    padding: 4rem 0;
-    text-align: center;
     background-color: #b8bdb5;
-    border-radius: 0rem 5px 5px 0px;
   }
 
   .img_background img {
@@ -129,10 +116,13 @@ font-family: "Montserrat", sans-serif; */
   .app__text {
     margin: 2rem 0rem;
     text-align: left;
+    margin: 1rem 0rem;
+    font-size: 1.2rem;
+    max-width: 85%;
   }
 
   .banner_action {
-    width: 50%;
-    margin: 0rem;
+    width: 60%;
+    padding: 0.75rem;
   }
 }
