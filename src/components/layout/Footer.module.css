@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&family=Montserrat:wght@400;500;700;900&display=swap");
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 2rem;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: 1rem;
+  color: #343a40;
+  opacity: 0.6;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+a {
+  text-decoration: none;
+  color: #343a40;
+  opacity: 0.6;
+  padding-bottom: 0.5rem;
+}
+
+a:hover {
+  opacity: 1;
+  color: #343a40;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  footer {
+    padding: 1rem 0rem;
+    border-top: 1px solid #e0e2db;
+    flex-direction: column;
+    align-items: center;
+  }
+}

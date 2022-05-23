@@ -27,10 +27,14 @@ function NavBar() {
         >
           ART OF FRAGRANCE
         </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="offcanvasNavbar"
-          className={classes.toggle_button}
-        />
+
+        {isLoggedIn && (
+          <Navbar.Toggle
+            aria-controls="offcanvasNavbar"
+            className={classes.toggle_button}
+          />
+        )}
+
         <Navbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
@@ -41,32 +45,30 @@ function NavBar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link
-                href="/home"
-                className={classes.nav_link}
-                data-bs-toggle="collapse"
-                data-bs-target=".navbar-collapse.show"
-              >
-                {/* <Link to="/home">Home</Link> */}
-                Home
-              </Nav.Link>
-              <Nav.Link href="/addfragrance" className={classes.nav_link}>
-                {/* <Link to="/addfragrance">Add Fragrance </Link> */}
-                Add Fragrance
-              </Nav.Link>
-              <Nav.Link href="/myfragrances" className={classes.nav_link}>
-                {/* <Link to="/addfragrance">Add Fragrance </Link> */}
-                My Fragraces
-              </Nav.Link>
               {isLoggedIn && (
-                <Nav.Link
-                  href="/"
-                  onClick={logOutHandler}
-                  className={classes.nav_link}
-                >
-                  {/* <Link to="/addfragrance">Add Fragrance </Link> */}
-                  Log Out
-                </Nav.Link>
+                <>
+                  <Nav.Link
+                    href="/home"
+                    className={classes.nav_link}
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                  >
+                    Home
+                  </Nav.Link>
+                  <Nav.Link href="/addfragrance" className={classes.nav_link}>
+                    Add Fragrance
+                  </Nav.Link>
+                  <Nav.Link href="/myfragrances" className={classes.nav_link}>
+                    My Fragraces
+                  </Nav.Link>
+                  <Nav.Link
+                    href="/"
+                    onClick={logOutHandler}
+                    className={classes.nav_link}
+                  >
+                    Log Out
+                  </Nav.Link>
+                </>
               )}
             </Nav>
           </Offcanvas.Body>
