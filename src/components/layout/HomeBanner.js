@@ -7,7 +7,7 @@ function HomeBanner(props) {
   const todays = (
     <>
       . Your fragrance of the day is{" "}
-      <strong>{props.fragToday.join(", ")}</strong>
+      <strong>{props.fragToday.join(", ")}</strong>.
     </>
   );
   return (
@@ -27,7 +27,7 @@ function HomeBanner(props) {
           {userName}. Welcome to Art Of Fragrances
         </h1>
         <p className={classes.intro}>
-          you currently have {props.fragNumber} Fragrances in your collection
+          you currently have {props.fragNum} Fragrances in your collection
           {props.fragToday.length <= 0
             ? `. You
               aren't wearing a scent today please add your scent the day.`

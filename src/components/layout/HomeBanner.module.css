@@ -46,8 +46,13 @@ font-family: "Montserrat", sans-serif; */
   font-size: 1rem;
   max-width: 60%;
   text-align: center;
-  opacity: 0.6;
   margin: 0rem;
+  opacity: 0.8;
+}
+
+.intro strong {
+  color: #343a40;
+  font-weight: 500;
 }
 
 .app__text {
@@ -75,6 +80,7 @@ font-family: "Montserrat", sans-serif; */
 .banner_action:hover {
   background-color: #889696;
   color: #e0e2db;
+  display: inline-block;
 }
 
 @media only screen and (min-width: 900px) {
@@ -124,7 +130,6 @@ font-family: "Montserrat", sans-serif; */
     line-height: 2rem;
     text-align: left;
     font-size: 1.3rem;
-    opacity: 0.6;
     margin: 1rem 0rem 0rem 0rem;
   }
 }
