@@ -7,6 +7,7 @@ import AddFragrance from "./pages/AddFragrance";
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
 import MyFragrances from "./pages/MyFragrances";
+import UserPage from "./pages/UserPage";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -20,6 +21,7 @@ function App() {
         {isLoggedIn && <Route path="/home" element={<Home />} />}
         {isLoggedIn && <Route path="todays" element={<Todays />} />}
         {isLoggedIn && <Route path="myfragrances" element={<MyFragrances />} />}
+        {isLoggedIn && <Route path="account" element={<UserPage />} />}
         {isLoggedIn && <Route path="addfragrance" element={<AddFragrance />} />}
         <Route path="*" element={<Login />} />
       </Routes>

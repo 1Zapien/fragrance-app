@@ -61,6 +61,9 @@ function NavBar() {
                   <Nav.Link href="/myfragrances" className={classes.nav_link}>
                     My Fragraces
                   </Nav.Link>
+                  <Nav.Link href="/account" className={classes.nav_link}>
+                    Account
+                  </Nav.Link>
                   <Nav.Link
                     href="/"
                     onClick={logOutHandler}
