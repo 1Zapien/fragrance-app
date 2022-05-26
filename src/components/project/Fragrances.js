@@ -96,14 +96,30 @@ function Fragrances() {
       });
   }, [topLeastFrag, compareDate, data, fragranceOTD]);
 
+  let displayFrag;
+
   if (loadedFragrance.length === 0) {
-    return <p className={classes.empty__note}>Please Add Fragrances</p>;
+    displayFrag = <p className={classes.empty__note}>Please Add Fragrances</p>;
   } else if (loadedFragrance.length === 1) {
-    return (
+    displayFrag = (
       <div className={classes.frag_card}>
         <h2>Add more Fragrances for more data </h2>
         <RecentFrags frags={loadedFragrance} />
       </div>
+    );
+  } else {
+    displayFrag = (
+      <>
+        <div className={classes.frag_card}>
+          <h2>Recent Fragrances</h2>
+          <RecentFrags frags={lastUsed} />
+        </div>
+
+        <div className={classes.frag_card}>
+          <h2>Most & Least Used</h2>
+          <RecentFrags frags={topLeast} />
+        </div>
+      </>
     );
   }
 
@@ -120,7 +136,7 @@ function Fragrances() {
       )}
       <div className={classes.frag_layout}>
         {window.location.pathname === "/home" ? (
-          <>
+          /* <>
             <div className={classes.frag_card}>
               <h2>Recent Fragrances</h2>
               <RecentFrags frags={lastUsed} />
@@ -130,7 +146,8 @@ function Fragrances() {
               <h2>Most & Least Used</h2>
               <RecentFrags frags={topLeast} />
             </div>
-          </>
+          </> */
+          displayFrag
         ) : (
           <div className={classes.frag_card}>
             <h2>All Fragrances</h2>
