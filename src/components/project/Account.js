@@ -45,6 +45,10 @@ function Account(props) {
       >
         <h2>Delete Your Account</h2>
         <p>We're sorry to see you go</p>
+        <p>
+          Account deletion is final. There will be no way to restore your
+          account.
+        </p>
         <button onClick={handleDelete}>Delete Account</button>
         <button onClick={closeModal}>Cancel</button>
       </Modal>

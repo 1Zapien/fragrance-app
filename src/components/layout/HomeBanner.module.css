@@ -14,11 +14,7 @@ font-family: "Montserrat", sans-serif; */
 
 .img_background {
   text-align: center;
-  padding: 2rem 2rem;
-  background-image: url("../../images/login_background.svg");
-  background-repeat: no-repeat;
-  background-position: 95% 50%;
-  background-size: auto 95%;
+  padding: 0rem;
 }
 
 .layout h1 {
@@ -29,8 +25,14 @@ font-family: "Montserrat", sans-serif; */
   font-weight: 400;
 }
 
+.layout h2 {
+  font-size: 1.5rem;
+}
+
 .login_img {
-  max-width: 70%;
+  max-width: 60%;
+  background-color: #d0d5cd;
+  padding: 1rem;
 }
 
 .banner {
@@ -65,22 +67,36 @@ font-family: "Montserrat", sans-serif; */
   text-align: center;
 }
 
+.action_buttons {
+  display: flex;
+}
+
 .banner_action {
   border: none;
   background: none;
   font-family: "Montserrat", sans-serif;
   color: #e0e2db;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: 10px;
   background-color: #5f7470;
   padding: 0.5rem 1.5rem;
-  margin: 2rem 0rem;
+  margin: 1rem 0.5rem;
+  text-align: center;
+}
+
+.banner_action_secondary {
+  background-color: #fff;
+  border: #5f7470 solid 1px;
+  color: #5f7470;
 }
 
 .banner_action:hover {
   background-color: #889696;
   color: #e0e2db;
-  display: inline-block;
+}
+
+.banner_action_secondary {
+  border: #889696 solid 1px;
 }
 
 @media only screen and (min-width: 900px) {
@@ -99,13 +115,12 @@ font-family: "Montserrat", sans-serif; */
 
   .img_background {
     width: 100%;
-    background-position: 55% 50%;
-    background-size: auto 150%;
+    padding: 2rem;
   }
 
   .login_img {
-    max-width: 75%;
-    margin-left: -7rem;
+    max-width: 90%;
+    /* margin-left: -7rem; */
   }
 
   .banner {
@@ -117,6 +132,7 @@ font-family: "Montserrat", sans-serif; */
   }
   .banner_action {
     padding: 0.5rem 2rem;
+    margin: 1rem 1rem 1rem 0rem;
   }
 
   .app__text {

@@ -8,6 +8,7 @@ import { useContext } from "react";
 import AuthContext from "./store/auth-context";
 import MyFragrances from "./pages/MyFragrances";
 import UserPage from "./pages/UserPage";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -16,15 +17,21 @@ function App() {
 
   return (
     <MainLayout>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        {isLoggedIn && <Route path="/home" element={<Home />} />}
-        {isLoggedIn && <Route path="todays" element={<Todays />} />}
-        {isLoggedIn && <Route path="myfragrances" element={<MyFragrances />} />}
-        {isLoggedIn && <Route path="account" element={<UserPage />} />}
-        {isLoggedIn && <Route path="addfragrance" element={<AddFragrance />} />}
-        <Route path="*" element={<Login />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          {isLoggedIn && <Route path="/home" element={<Home />} />}
+          {isLoggedIn && <Route path="todays" element={<Todays />} />}
+          {isLoggedIn && (
+            <Route path="myfragrances" element={<MyFragrances />} />
+          )}
+          {isLoggedIn && <Route path="account" element={<UserPage />} />}
+          {isLoggedIn && (
+            <Route path="addfragrance" element={<AddFragrance />} />
+          )}
+          <Route path="*" element={<Login />} />
+        </Routes>
+      </ScrollToTop>
     </MainLayout>
   );
 }

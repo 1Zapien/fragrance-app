@@ -55,9 +55,9 @@ function NavBar() {
                   >
                     Home
                   </Nav.Link>
-                  <Nav.Link href="/addfragrance" className={classes.nav_link}>
+                  {/* <Nav.Link href="/addfragrance" className={classes.nav_link}>
                     Add Fragrance
-                  </Nav.Link>
+                  </Nav.Link> */}
                   <Nav.Link href="/myfragrances" className={classes.nav_link}>
                     My Fragraces
                   </Nav.Link>

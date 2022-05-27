@@ -21,10 +21,9 @@ function HomeBanner(props) {
       </div>
 
       <div className={classes.banner}>
-        <p className={classes.intro}>Hello there,</p>
+        {/* <p className={classes.intro}>Hello there,</p> */}
         <h1 className={classes.app__text}>
-          {" "}
-          {userName}. Welcome to Art Of Fragrances
+          Hello {userName}.<br /> Welcome to Art Of Fragrances
         </h1>
         <p className={classes.intro}>
           you currently have {props.fragNum} Fragrances in your collection
@@ -33,13 +32,20 @@ function HomeBanner(props) {
               aren't wearing a scent today please add your scent the day.`
             : todays}
         </p>
-        <nav>
+        <nav className={classes.action_buttons}>
           <Link
             to="/todays"
             className={classes.banner_action}
             frags={props.frags}
           >
             Add SOTD
+          </Link>
+          <Link
+            to="/addfragrance"
+            className={`${classes.banner_action} ${classes.banner_action_secondary}`}
+            frags={props.frags}
+          >
+            Add Fragrance
           </Link>
         </nav>
       </div>
