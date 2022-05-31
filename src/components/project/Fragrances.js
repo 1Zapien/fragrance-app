@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import RecentFrags from "./FragList";
 import classes from "./Fragrances.module.css";
 import HomeBanner from "../layout/HomeBanner";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function Fragrances() {
   const [loadedFragrance, setLoadedFragrances] = useState([]);
@@ -142,9 +142,9 @@ function Fragrances() {
           <div className={classes.frag_card}>
             <h2>All Fragrances</h2>
             <RecentFrags frags={loadedFragrance} />
-            <Link to="/addfragrance">
+            {/* <Link to="/addfragrance">
               <button>Add a Fragrance</button>
-            </Link>
+            </Link> */}
           </div>
         )}
       </div>

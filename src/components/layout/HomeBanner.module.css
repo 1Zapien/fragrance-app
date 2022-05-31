@@ -115,12 +115,11 @@ font-family: "Montserrat", sans-serif; */
 
   .img_background {
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .login_img {
-    max-width: 90%;
-    /* margin-left: -7rem; */
+    max-width: 65%;
   }
 
   .banner {
