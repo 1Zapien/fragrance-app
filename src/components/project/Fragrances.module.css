@@ -5,9 +5,10 @@
 
 .frag_layout h2 {
   text-align: center;
-  padding-top: 2rem;
-  color: #343a40;
+  padding: 1rem 0rem;
+  color: #5f7470;
   font-weight: 400;
+  font-size: 1.2rem;
 }
 
 .empty__note {

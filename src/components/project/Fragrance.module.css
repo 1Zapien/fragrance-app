@@ -1,29 +1,38 @@
 .frag_card {
   display: flex;
-  margin: 1rem 0rem;
-  flex-direction: row-reverse;
-  align-content: space-between;
-  justify-content: space-between;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 50%;
+  margin: 1rem auto;
+}
+.frag_card p {
+  font-size: 0.8rem;
+}
+
+.frag_img {
+  height: stretch;
 }
 
 .frag_img img {
-  max-width: 50%;
-  float: right;
+  display: block;
+  margin: 0rem auto;
+  max-width: 75%;
 }
 
 .frag_info {
   min-width: 50%;
-  margin: auto 0rem;
+  margin: 0.5rem auto;
 }
 
 .frag_title {
-  display: flex;
   align-items: center;
   padding: 1rem 0rem;
 }
 
 .frag_title h3 {
   padding-right: 0.5rem;
+  margin-bottom: 0.2rem;
   font-size: 1.75rem;
   color: #5f7470;
 }
@@ -40,10 +49,11 @@
   font-size: 1rem;
   color: #343a40;
   opacity: 0.6;
+  display: inline;
 }
 
 .frag_cardInfo img {
-  padding-right: 1rem;
+  padding-right: 0.75rem;
 }
 
 /* .frag_cardDate {
@@ -51,20 +61,7 @@
 } */
 
 @media only screen and (max-width: 750px) {
-  .frag_card {
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .frag_img {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .frag_img img {
-    max-width: 60%;
-    float: none;
-    padding: 1rem;
+  .frag_title h3 {
+    font-size: 1.1rem;
   }
 }

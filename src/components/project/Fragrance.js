@@ -1,9 +1,11 @@
 import classes from "./Fragrance.module.css";
 import icon from "../../images/calendar.png";
 import counter from "../../images/counter.png";
+import React from "react";
 
 function Fragrance(props) {
-  // Function to remove the time from last used
+  // function to remove the time from last
+  // used so it only shows date
   const removeTime = date => {
     return date
       .split(" ")
@@ -12,28 +14,32 @@ function Fragrance(props) {
   };
 
   return (
-    <div>
-      <div className={classes.frag_card}>
-        <div className={classes.frag_img}>
-          {props.img ? <img src={props.img} alt="frag"></img> : <></>}
+    <div className={classes.frag_card}>
+      <div className={classes.frag_img}>
+        {props.img && (
+          <img
+            src={props.img}
+            onError={e => (e.target.style.display = "none")}
+            alt="frag"
+          ></img>
+        )}
+      </div>
+      <div className={classes.frag_info}>
+        <div className={classes.frag_title}>
+          <h3>{props.name}</h3>
+          <p>{props.brand}</p>
         </div>
-        <div className={classes.frag_info}>
-          <div className={classes.frag_title}>
-            <h3>{props.name}</h3>
-            <p>-{props.brand}</p>
-          </div>
 
-          <div className={classes.frag_cardInfo}>
-            <p>
-              <img src={counter} alt="counter icon"></img>
-              {props.timesUsed} times used
-            </p>
+        <div className={classes.frag_cardInfo}>
+          <p>
+            <img src={counter} alt="counter icon"></img>
+            {props.timesUsed} times used
+          </p>
 
-            <p>
-              <img src={icon} alt="hero"></img>
-              {removeTime(props.lastUsed)}
-            </p>
-          </div>
+          <p>
+            <img src={icon} alt="hero"></img>
+            {removeTime(props.lastUsed)}
+          </p>
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import Fragrance from "./Fragrance";
+import classes from "./FragList.module.css";
 
 function FragsList(props) {
   return (
-    <div>
+    <div className={classes.frags_columns}>
       {props.frags.map(frag => (
         <Fragrance
           key={frag.id}

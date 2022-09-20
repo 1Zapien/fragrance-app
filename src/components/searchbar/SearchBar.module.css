@@ -1,0 +1,9 @@
+.search {
+  margin: auto;
+  height: 75%;
+  width: 100%;
+}
+
+.search.textfield {
+  border-radius: 10px;
+}

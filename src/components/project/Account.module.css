@@ -1,0 +1,23 @@
+.account {
+  padding: 1rem;
+}
+
+.modal_text {
+  padding: 1rem 0rem;
+  max-width: 60%;
+}
+
+.delete_button_primary {
+  margin-right: 1rem;
+  background-color: #b36a5e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0rem 1rem;
+}
+
+.delete_button_secondary {
+  border: none;
+  color: #b36a5e;
+  border-radius: 5px;
+}

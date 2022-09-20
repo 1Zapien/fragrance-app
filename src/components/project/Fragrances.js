@@ -1,5 +1,5 @@
 // import RecentFrags from "./RecentFrags";
-import { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import RecentFrags from "./FragList";
 import classes from "./Fragrances.module.css";
 import HomeBanner from "../layout/HomeBanner";
@@ -100,11 +100,14 @@ function Fragrances() {
   let displayFrag;
 
   if (loadedFragrance.length === 0) {
-    displayFrag = <p className={classes.empty__note}>Please Add Fragrances</p>;
+    displayFrag = (
+      <p className={classes.empty__note}>
+        Please Add A Fragrances to your collection
+      </p>
+    );
   } else if (loadedFragrance.length === 1) {
     displayFrag = (
       <div className={classes.frag_card}>
-        <h2>Add more Fragrances for more data </h2>
         <RecentFrags frags={loadedFragrance} />
       </div>
     );
@@ -126,14 +129,12 @@ function Fragrances() {
 
   return (
     <div>
-      {window.location.pathname === "/home" ? (
+      {window.location.pathname === "/home" && (
         <HomeBanner
           fragNum={fragNumber}
           fragToday={fragsOTD}
           frags={loadedFragrance}
         ></HomeBanner>
-      ) : (
-        <></>
       )}
       <div className={classes.frag_layout}>
         {window.location.pathname === "/home" ? (
@@ -142,9 +143,6 @@ function Fragrances() {
           <div className={classes.frag_card}>
             <h2>All Fragrances</h2>
             <RecentFrags frags={loadedFragrance} />
-            {/* <Link to="/addfragrance">
-              <button>Add a Fragrance</button>
-            </Link> */}
           </div>
         )}
       </div>

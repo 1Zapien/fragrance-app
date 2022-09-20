@@ -22,10 +22,11 @@ form {
 }
 
 .card {
+  display: flex;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 5px;
-  border: solid grey 2px;
+  border: solid #889696 2px;
 }
 
 .card:hover {
@@ -47,27 +48,32 @@ form {
   margin: 2rem 2rem;
   text-align: left;
   display: flex;
+  flex-direction: column-reverse;
+}
+
+.frag_img img {
+  display: block;
+  margin: 0rem auto;
+  max-width: 50%;
 }
 
 .frag_card img {
-  max-width: 50%;
   padding-right: 1rem;
 }
 
 .frag_data {
   display: flex;
-  align-items: center;
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
   flex-direction: column;
   align-items: baseline;
-  width: 50%;
-  margin: auto;
+  margin: 0rem 1rem;
 }
 
 .frag_data h3 {
   padding-right: 0.5rem;
   font-size: 2rem;
   color: #5f7470;
+  font-family: "Montserrat", sans-serif;
 }
 
 .frag_cardTimes {
@@ -80,6 +86,9 @@ form {
   font-size: 1rem;
   color: #889696;
 }
+.frag_img {
+  height: stretch;
+}
 
 .frag_cardInfo p {
   margin-bottom: 0.25rem;
@@ -89,6 +98,12 @@ form {
   display: inline-block;
   font-size: 1.5rem;
   padding-right: 0.75rem;
+}
+
+.utilities {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 @keyframes glow {
@@ -125,17 +140,43 @@ form {
   color: #e0e2db;
 }
 
+button:disabled,
+button[disabled]:hover {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+@media only screen and (max-width: 400px) {
+  .utilities {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   form {
-    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    margin: 1rem;
+    padding: 0rem;
   }
 
   .frag_card {
     flex-direction: column-reverse;
     align-items: center;
+    margin: 0.5rem 0.5rem;
+    display: flex;
   }
 
   .frag_data {
-    width: 75%;
+    margin: auto;
+  }
+
+  .frag_data h3 {
+    font-size: 1.2rem;
+  }
+
+  .main h2 {
+    padding: 1.5rem 2rem;
   }
 }

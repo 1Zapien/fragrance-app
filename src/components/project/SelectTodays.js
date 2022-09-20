@@ -3,9 +3,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import icon from "../../images/calendar.png";
 import counter from "../../images/counter.png";
+import { useEffect } from "react";
+import SearchBar from "../searchbar/SearchBar";
+import Weather from "../weather/Weather";
 
 function SelectTodays(props) {
   const navigate = useNavigate();
+  const [inputText, setInputText] = useState("");
+  const [searchMatch, setSearchMatch] = useState(null);
 
   let data = localStorage.getItem("userID");
   const [isSelected, setIsSelected] = useState(0);
@@ -43,15 +48,27 @@ function SelectTodays(props) {
     });
   }
 
+  useEffect(() => {
+    setSearchMatch(
+      props.frags.filter(frag => frag.name.toLowerCase().includes(inputText))
+    );
+  }, [inputText, props.frags]);
+
   return (
     <div className={classes.main}>
       <h2>Select your Fragrance of the day</h2>
+      <div className={classes.utilities}>
+        <SearchBar setInputText={setInputText} />
+        <Weather />
+      </div>
       <form onSubmit={SubmitHandler} id="todays-form">
-        {props.frags.map(frag => (
+        {searchMatch?.map(frag => (
           <div
             key={frag.id}
             className={
-              isSelected === frag.id ? classes.active_card : classes.card
+              isSelected === frag.id
+                ? `${classes.active_card} ${classes.card}`
+                : classes.card
             }
             onClick={() => {
               setIsSelected(frag.id);
@@ -65,7 +82,11 @@ function SelectTodays(props) {
 
                 <div className={classes.frag_cardInfo}>
                   <p>
-                    <img src={counter} alt="counter icon"></img>
+                    <img
+                      src={counter}
+                      alt="counter icon"
+                      onError={e => (e.target.style.display = "none")}
+                    ></img>
                     {frag.timesUsed} times used
                   </p>
 
@@ -75,15 +96,27 @@ function SelectTodays(props) {
                   </p>
                 </div>
               </div>
-              {frag.imgUrl ? <img src={frag.imgUrl} alt="frag"></img> : <></>}
+              <div className={classes.frag_img}>
+                {frag.imgUrl ? (
+                  <img
+                    src={frag.imgUrl}
+                    onError={e => (e.target.style.display = "none")}
+                    alt="frag"
+                  ></img>
+                ) : (
+                  <></>
+                )}
+              </div>
             </div>
           </div>
         ))}
       </form>
+
       <button
         className={classes.project_submit}
         form="todays-form"
         type="submit"
+        disabled={!isSelected}
       >
         Submit SOTD
       </button>

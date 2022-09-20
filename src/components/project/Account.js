@@ -1,5 +1,6 @@
 import Modal from "react-modal";
 import { useState } from "react";
+import classes from "./Account.module.css";
 
 const customStyles = {
   content: {
@@ -33,9 +34,11 @@ function Account(props) {
   }
 
   return (
-    <>
+    <div className={classes.account}>
       <h1>Hello, {userName}</h1>
-      <button onClick={openModal}>Delete Account</button>
+      <button className={classes.delete_button_secondary} onClick={openModal}>
+        Delete Account
+      </button>
       <Modal
         isOpen={modalIsOpen}
         // onAfterOpen={afterOpenModal}
@@ -44,15 +47,21 @@ function Account(props) {
         contentLabel="Example Modal"
       >
         <h2>Delete Your Account</h2>
-        <p>We're sorry to see you go</p>
-        <p>
-          Account deletion is final. There will be no way to restore your
-          account.
+        <p className={classes.modal_text}>
+          We're sorry to see you go. Account deletion is final. There will be no
+          way to restore your account.
         </p>
-        <button onClick={handleDelete}>Delete Account</button>
-        <button onClick={closeModal}>Cancel</button>
+        <button className={classes.delete_button_primary} onClick={closeModal}>
+          Cancel
+        </button>
+        <button
+          className={classes.delete_button_secondary}
+          onClick={handleDelete}
+        >
+          Delete Account
+        </button>
       </Modal>
-    </>
+    </div>
   );
 }
 
